@@ -1,11 +1,23 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+let pronoun = ["the", "our"];
+let adj = ["great", "big", "last"];
+let noun = ["jogger", "racoon", "ofus", "focus"];
+let extensions = [".com", ".net", ".us", ".io", ".on"];
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+for (let pronombre of pronoun) {
+  for (let adjetivo of adj) {
+    for (let sustantivo of noun) {
+      for (let extension of extensions) {
+        console.log(pronombre + adjetivo + sustantivo + extension);
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+        if (sustantivo.endsWith(extension.slice(1))) {
+          let hack =
+            pronombre +
+            adjetivo +
+            sustantivo.slice(0, -extension.length + 1) +
+            extension;
+          console.log(hack);
+        }
+      }
+    }
+  }
+}
